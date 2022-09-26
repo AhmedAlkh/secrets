@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect("mongodb://localhost:27017/usersDB", {useNewUrlParser: true});
 
-const userSchema = {
+const userSchema = new mongoose.Schema ({
     email: String,
     password: String
-};
+});
 
 const User = new mongoose.model("User", userSchema);
 
